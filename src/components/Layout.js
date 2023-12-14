@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function loadSquares(n) {
   const squares = [];
@@ -11,10 +11,19 @@ function loadSquares(n) {
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [pageHeight, setPageHeight] = useState(0);
   const menuRef = useRef();
+  const location = useLocation();
   const NUM_SQUARES = 10;
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  const updateHeight = () => {
+    setTimeout(() => {
+      const height = document.body.scrollHeight - 1;
+      setPageHeight(height);
+    }, 100);
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -24,15 +33,23 @@ const Layout = ({ children }) => {
     }
 
     document.addEventListener("mousedown", handleClickOutside);
+
+    updateHeight();
+
+    window.addEventListener("resize", updateHeight);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("resize", updateHeight);
     };
-  }, [menuRef]);
+  }, [location, menuRef]);
 
   return (
     <>
       <div className="area">
-        <ul className="circles">{loadSquares(NUM_SQUARES)}</ul>
+        <ul className="squares" style={{ height: `${pageHeight}px` }}>
+          {loadSquares(NUM_SQUARES)}
+        </ul>
       </div>
       <header className="relative font-bungee h-screen">
         <div className="absolute top-0 right-0 p-4 z-10">
@@ -50,24 +67,28 @@ const Layout = ({ children }) => {
               <Link
                 to="/about"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                onClick={closeMenu}
               >
                 About
               </Link>
               <Link
                 to="/projects"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                onClick={closeMenu}
               >
                 Projects
               </Link>
               <Link
                 to="/resume"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                onClick={closeMenu}
               >
                 Resume
               </Link>
               <Link
                 to="/contact"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                onClick={closeMenu}
               >
                 Contact
               </Link>
