@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         periwinkle: "#DAFFFF",
+        backblue: "#0973A3"
       },
     },
     fontFamily: {

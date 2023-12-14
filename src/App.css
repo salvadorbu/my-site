@@ -8,6 +8,11 @@
   src: url("./assets/Bungee-Regular.ttf");
 }
 
+@font-face {
+	font-family: "futura";
+	src: url("./assets/Futura\ Bold.otf");
+}
+
 @-webkit-keyframes animatetop {
 	from {
 		top: -300px;
