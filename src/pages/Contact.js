@@ -117,26 +117,33 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
-  <div className="w-full px-3 flex justify-center">
-    <button
-      className="bg-stone-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
-      type="submit"
-      disabled={isLoading}
-    >
-      {isLoading ? (
-        <>
-          <FontAwesomeIcon icon={icon({ name: "spinner", style: "solid" })} spin className="mr-2" />
-          Sending...
-        </>
-      ) : (
-        <>
-          <FontAwesomeIcon icon={icon({ name: "paper-plane", style: "solid" })} className="mr-2" />
-          Send
-        </>
-      )}
-    </button>
-  </div>
-</div>
+            <div className="w-full px-3 flex justify-center">
+              <button
+                className="bg-stone-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
+                type="submit"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <FontAwesomeIcon
+                      icon={icon({ name: "spinner", style: "solid" })}
+                      spin
+                      className="mr-2"
+                    />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <FontAwesomeIcon
+                      icon={icon({ name: "paper-plane", style: "solid" })}
+                      className="mr-2"
+                    />
+                    Send
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </>
