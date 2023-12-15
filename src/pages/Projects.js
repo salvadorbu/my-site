@@ -11,7 +11,7 @@ const projects = [
     title: "QuickRead",
     description: `A fast multithreaded pattern searching tool for large text or database files. I leveraged mmap from the Linux API to avoid loading the entire
     file into memory, and implemented the Boyer-Moore string search algorithm. Multiple threads are used to speedup the file
-     search, though this feature mainly benefits files stored in SSDs.`,
+     search, though this feature mainly benefits  files stored in SSDs.`,
     imageUrl: quickReadImage,
     link: "https://github.com/salvadorbu/quickread",
   },
