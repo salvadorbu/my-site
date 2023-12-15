@@ -52,9 +52,7 @@ const About = () => {
         <div className="text-center">
           <span className="text-xl block">Salvador Buenadicha</span>
           <div className="mt-2">
-            <p className="text-sm">
-              Computer Science student at Virginia Tech
-            </p>
+            <p className="text-sm">Computer Science student at Virginia Tech</p>
             <a
               href="https://github.com/salvadorbu"
               target="_blank"

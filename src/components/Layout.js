@@ -62,32 +62,32 @@ const Layout = ({ children }) => {
           {isMenuOpen && (
             <div
               ref={menuRef}
-              className="absolute right-2 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl"
+              className="absolute right-2 mt-2 py-2 w-48 bg-periwinkle rounded-lg shadow-xl"
             >
               <Link
                 to="/about"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className="block px-4 py-2 text-gray-800 hover:bg-amber-600"
                 onClick={closeMenu}
               >
                 About
               </Link>
               <Link
                 to="/projects"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className="block px-4 py-2 text-gray-800 hover:bg-amber-600"
                 onClick={closeMenu}
               >
                 Projects
               </Link>
               <Link
                 to="/resume"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className="block px-4 py-2 text-gray-800 hover:bg-amber-600"
                 onClick={closeMenu}
               >
                 Resume
               </Link>
               <Link
                 to="/contact"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className="block px-4 py-2 text-gray-800 hover:bg-amber-600"
                 onClick={closeMenu}
               >
                 Contact
