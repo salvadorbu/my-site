@@ -160,14 +160,14 @@ body {
 
 @keyframes animate {
     0% {
-        transform: translateY(-1000px) rotate(0deg); /* Start above the screen */
-        opacity: 0; /* Start with 0 opacity */
+        transform: translateY(-1000px) rotate(0deg);
+        opacity: 0;
         border-radius: 0;
     }
 
     100% {
-        transform: translateY(0) rotate(720deg); /* End at the original position */
-        opacity: 1; /* Fully visible at the end */
+        transform: translateY(0) rotate(720deg);
+        opacity: 1;
         border-radius: 0;
     }
 }
