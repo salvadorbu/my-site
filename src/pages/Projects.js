@@ -46,7 +46,9 @@ const projects = [
 const Projects = () => {
   return (
     <div className="projects-container" style={{ padding: "20px" }}>
-      <h1 className="text-5xl text-periwinkle text-center">My Projects</h1>
+      <h1 className="text-3xl text-left text-periwinkle md:text-5xl md:text-center">
+        My Projects
+      </h1>
       <div
         className="projects-grid"
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}

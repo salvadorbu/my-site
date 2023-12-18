@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+
+import resume from "../assets/resume.pdf";
+
 function loadSquares(n) {
   const squares = [];
   for (let i = 0; i < n; i++) {
@@ -11,6 +17,7 @@ function loadSquares(n) {
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDownloadIcon, setShowDownloadIcon] = useState(false);
   const [pageHeight, setPageHeight] = useState(0);
   const menuRef = useRef();
   const location = useLocation();
@@ -54,7 +61,13 @@ const Layout = ({ children }) => {
       <header className="relative font-bungee h-screen">
         <div className="absolute top-0 right-0 p-4 z-10">
           <button
-            className="text-5xl text-periwinkle hover:text-sky-600 font-bold py-2 px-4 rounded"
+            className="text-5xl text-periwinkle hover:text-sky-600 font-bold py-2 px-4 rounded sm:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <FontAwesomeIcon icon={faBars} />{" "}
+          </button>
+          <button
+            className="hidden sm:block text-5xl text-periwinkle hover:text-sky-600 font-bold py-2 px-4 rounded"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             Menu
@@ -78,13 +91,18 @@ const Layout = ({ children }) => {
               >
                 Projects
               </Link>
-              <Link
-                to="/resume"
-                className="block px-4 py-2 text-gray-800 hover:bg-amber-600"
-                onClick={closeMenu}
+              <a
+                href={resume}
+                download="resume.pdf"
+                onMouseEnter={() => setShowDownloadIcon(true)}
+                onMouseLeave={() => setShowDownloadIcon(false)}
+                className="flex items-center px-4 py-2 text-gray-800 hover:bg-amber-600"
               >
                 Resume
-              </Link>
+                {showDownloadIcon && (
+                  <FontAwesomeIcon icon={faDownload} className="ml-2" />
+                )}
+              </a>
               <Link
                 to="/contact"
                 className="block px-4 py-2 text-gray-800 hover:bg-amber-600"

@@ -42,8 +42,10 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center top-0 p-4">
-        <h1 className="text-5xl text-periwinkle py-2">Contact Me</h1>
+      <div className="top-0 p-4">
+        <h1 className="text-3xl text-left text-periwinkle md:text-5xl md:text-center">
+          Contact Me
+        </h1>
       </div>
       <div className="flex justify-center py-10">
         <form onSubmit={handleSubmit} className="w-full max-w-lg">
