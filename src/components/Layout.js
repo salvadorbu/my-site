@@ -6,7 +6,6 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 import resume from "../assets/resume.pdf";
-import { Analytics } from "@vercel/analytics/react";
 
 function loadSquares(n) {
   const squares = [];
@@ -115,7 +114,6 @@ const Layout = ({ children }) => {
           )}
         </div>
         {children}
-        <Analytics />
       </header>
     </>
   );
